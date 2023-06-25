@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app';
+import { BrowserRouter } from 'react-router-dom';
+import CustomRoutes from './routes';
 // import reportWebVitals from '../../reportWebVitals.js';
 // import { registerServiceWorker } from '../../serviceWorker';
 
 window.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.hydrateRoot(document.getElementById('root'), <App />);
+    ReactDOM.hydrateRoot(document.getElementById('root'),
+        <BrowserRouter>
+            <CustomRoutes />
+        </BrowserRouter>);
 });
 
 // If you want to start measuring performance in your app, pass a function

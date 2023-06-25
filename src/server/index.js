@@ -1,7 +1,11 @@
 import express from 'express';
+import React from 'react';
 import { renderToString } from 'react-dom/server';
 import path from 'path';
 import HtmlTemplate from './htmlTemplate';
+import { StaticRouter } from "react-router-dom/server";
+import CustomRoutes from '../client/routes';
+
 
 const app = express();
 const port = 3000;
@@ -23,7 +27,12 @@ app.get('/*', (req, res) => {
         }));
     }
 
-    const content = HtmlTemplate();
+
+    let html = renderToString(<StaticRouter location={req.url}>
+        <CustomRoutes location={req.url} />
+    </StaticRouter>)
+
+    const content = HtmlTemplate({ html });
     res.status(200).send(content);
 });
 

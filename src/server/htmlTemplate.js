@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import App from '../client/app';
 
-const HtmlTemplate = () => {
+const HtmlTemplate = ({ html }) => {
     return `
         <!DOCTYPE html>
         <html>
@@ -17,7 +17,7 @@ const HtmlTemplate = () => {
             <link rel="stylesheet" href="client/styles.css">
             </head>
             <body>
-            <div id="root">${renderToString(<App />)}</div>
+            <div id="root">${html}</div>
             <!-- Add your script tags or other dependencies here -->
             </body>
         </html>
