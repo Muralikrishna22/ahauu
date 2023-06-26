@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Base from './layout/base'
 
 function Home() {
-    return (
-        <div>
-            <header>
-                <h1>E-commerce Website</h1>
-            </header>
 
+    return (
+        <Base>
             <main>
                 {Array.from(Array(100).keys())?.map((num) => (
                     <div className="product" key={num}>
@@ -19,7 +17,7 @@ function Home() {
                     </div>
                 ))}
             </main>
-        </div>
+        </Base>
     )
 }
 

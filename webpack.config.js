@@ -20,6 +20,7 @@ const config = (entry, outputPath, target) => {
             filename: 'styles.css',
         })],
         target,
+        devtool: 'source-map',
         module: {
             rules: [
                 {
@@ -41,6 +42,20 @@ const config = (entry, outputPath, target) => {
                         'css-loader'
                     ],
                 },
+                {
+                    test: /\.(png|jpe?g|gif)$/i,
+                    use: [
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 8192, // Adjust the limit as needed
+                                name: '[name].[ext]',
+                                outputPath: 'images',
+                                publicPath: '/images/' // Update publicPath
+                            }
+                        }
+                    ]
+                }
             ],
         }
     }
