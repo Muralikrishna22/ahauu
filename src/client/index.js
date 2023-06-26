@@ -5,12 +5,18 @@ import { BrowserRouter } from 'react-router-dom';
 import CustomRoutes from './routes';
 // import reportWebVitals from '../../reportWebVitals.js';
 // import { registerServiceWorker } from '../../serviceWorker';
+import { QueryClient, QueryClientProvider } from 'react-query';
+queryClient?.restore(window.__REACT_QUERY_STATE__);
 
+const queryClient = new QueryClient();
 window.addEventListener('DOMContentLoaded', () => {
     ReactDOM.hydrateRoot(document.getElementById('root'),
-        <BrowserRouter>
-            <CustomRoutes />
-        </BrowserRouter>);
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <CustomRoutes />
+            </BrowserRouter>
+        </QueryClientProvider>
+    );
 });
 
 // If you want to start measuring performance in your app, pass a function

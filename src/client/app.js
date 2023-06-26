@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Home from './pages/Home'
+import React, { Suspense, useState, lazy } from 'react'
 import '../client/assets/global.css'
 import AppStatus from './components/AppStatus'
+import Home from './pages/Home'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

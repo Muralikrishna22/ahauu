@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState, lazy } from 'react'
 import Base from './layout/base'
+const Products = lazy(() => import('../components/home/products' /* webpackPrefetch: true */));
+
 
 function Home() {
-
     return (
         <Base>
             <main>
-                {Array.from(Array(100).keys())?.map((num) => (
-                    <div className="product" key={num}>
-                        <div className="details">
-                            <h2>Product {num}</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p>$19.99</p>
-                            <button>Add to Cart</button>
-                        </div>
-                    </div>
-                ))}
+                <Suspense fallback={<div>Loading Products.....</div>}>
+                    <Products />
+                </Suspense>
             </main>
         </Base>
     )
