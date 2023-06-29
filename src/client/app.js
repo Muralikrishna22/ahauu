@@ -8,6 +8,7 @@ function App() {
     const [text, setText] = useState('Hello world')
     return (
         <div>
+            <AppStatus />
             <Home />
         </div>
     )

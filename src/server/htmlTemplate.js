@@ -9,7 +9,7 @@ export default function HtmlTemplate({ assets, jsx, title }) {
                 <link rel="shortcut icon" href="favicon.ico" />
                 <link rel="stylesheet" href="client/styles.css" />
                 <title>{title}</title>
-                <script src="/client/bundle.js"></script>
+                <script src="/client/main.js"></script>
             </head>
             <body>
                 <noscript

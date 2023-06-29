@@ -1,7 +1,10 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack')
 
+
+const isProduction = process?.env?.NODE_ENV === 'production';
 const config = (entry, outputPath, target) => {
     return {
         entry: {
@@ -10,17 +13,22 @@ const config = (entry, outputPath, target) => {
                 path.resolve(__dirname, entry),
             ],
         },
-        mode: 'development',
+        mode: isProduction ? 'production' : 'development',
+        devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
         output: {
-            filename: 'bundle.js',
+            filename: 'main.js',
             path: path.resolve(__dirname, outputPath),
         },
         // externals: [nodeExternals()],
-        plugins: [new MiniCssExtractPlugin({
-            filename: 'styles.css',
-        })],
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: 'styles.css',
+            }),
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify('development')
+            })
+        ],
         target,
-        devtool: 'source-map',
         module: {
             rules: [
                 {
