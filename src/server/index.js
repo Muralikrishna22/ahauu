@@ -59,6 +59,7 @@ function handleErrors(fn) {
         try {
             return await fn(req, res);
         } catch (x) {
+            console.log("....failed to handle error.", x)
             next(x);
         }
     };

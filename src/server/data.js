@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createContext, useContext } from 'react';
 
 // Note: this file does not demonstrate a real data fetching strategy.
@@ -20,12 +20,33 @@ const fakeData = [
     'I like marshmallows',
 ];
 
-export function useData() {
+
+export function useData(name, repo) {
     const ctx = useContext(DataContext);
-    if (ctx !== null) {
-        // This context is only provided on the server.
-        // It is here to simulate a suspending data fetch.
-        ctx.read();
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const fetchData = async () => {
+        try {
+            setIsLoading(true);
+            const response = await repo()?.then((res) => res)
+            ctx[name] = response?.data
+            // Update the data in the context or handle it in your application logic
+            // ctx.read();
+        } catch (error) {
+            setError(error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    if (ctx && !ctx[name]) {
+        throw fetchData(); // Trigger the suspense
     }
-    return fakeData;
+
+    return {
+        data: ctx[name] ?? fakeData,
+        isLoading,
+        error,
+    };
 }

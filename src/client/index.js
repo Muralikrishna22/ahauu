@@ -6,16 +6,30 @@ import CustomRoutes from './routes';
 // import reportWebVitals from '../../reportWebVitals.js';
 // import { registerServiceWorker } from '../../serviceWorker';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { DataProvider } from '../server/data';
+import HtmlTemplate from '../server/htmlTemplate';
 queryClient?.restore(window.__REACT_QUERY_STATE__);
+import { data } from '../server/render';
+
+// In a real setup, you'd read it from webpack build stats.
+let assets = {
+    "main.js": "client/main.js",
+    "main.css": "/main.css"
+};
+
 
 const queryClient = new QueryClient();
+const jsx = <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+        <CustomRoutes assets={window.assetManifest} />
+    </BrowserRouter>
+</QueryClientProvider>
+
 window.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.hydrateRoot(document.getElementById('root'),
-        <QueryClientProvider client={queryClient}>
-            <BrowserRouter>
-                <CustomRoutes />
-            </BrowserRouter>
-        </QueryClientProvider>
+    ReactDOM.hydrateRoot(document,
+        <DataProvider data={data}>
+            <HtmlTemplate jsx={jsx} assets={assets} />
+        </DataProvider>
     );
 });
 

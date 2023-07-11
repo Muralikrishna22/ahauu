@@ -6,10 +6,9 @@ export default function HtmlTemplate({ assets, jsx, title }) {
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="shortcut icon" href="favicon.ico" />
+                <link rel="shortcut icon" href="/favicon.ico" />
                 <link rel="stylesheet" href="client/styles.css" />
                 <title>{title}</title>
-                <script src="/client/main.js"></script>
             </head>
             <body>
                 <noscript
@@ -27,6 +26,7 @@ export default function HtmlTemplate({ assets, jsx, title }) {
                         __html: `assetManifest = ${JSON.stringify(assets)};`
                     }}
                 />
+                <script src="/client/main.js"></script>
             </body>
         </html>
     );

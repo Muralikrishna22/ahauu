@@ -5,11 +5,9 @@ import '../assets/css/AppStatus.css';
 const AppStatus = () => {
     const [isServerRendered, setIsServerRendered] = useState(true);
     const [isClientHydrated, setIsClientHydrated] = useState(false);
-    const [showToasts, setShowToasts] = useState(true);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setIsServerRendered(false);
             setTimeout(() => {
                 setIsClientHydrated(true);
             }, 1000);
@@ -19,29 +17,27 @@ const AppStatus = () => {
     useEffect(() => {
         if (isClientHydrated) {
             setTimeout(() => {
-                setShowToasts(false);
+                setIsClientHydrated(false);
             }, 5000);
         }
     }, [isClientHydrated]);
 
     return (
         <div className="app-status">
-            {showToasts && (
-                <>
-                    {isServerRendered && (
-                        <div className="toast">
-                            <RiErrorWarningFill className="toast-error-icon" />
-                            <p>Failed to hydrate  </p>
-                        </div>
-                    )}
-                    {isClientHydrated && (
-                        <div className="toast">
-                            <RiCheckLine className="toast-icon" />
-                            <p>Hydration complete</p>
-                        </div>
-                    )}
-                </>
-            )}
+            <>
+                {/* {isServerRendered && (
+                    <div className="toast">
+                        <RiErrorWarningFill className="toast-error-icon" />
+                        <p>Failed to hydrate  </p>
+                    </div>
+                )} */}
+                {isClientHydrated && (
+                    <div className="toast">
+                        <RiCheckLine className="toast-icon" />
+                        <p>Hydration complete</p>
+                    </div>
+                )}
+            </>
         </div>
     );
 };

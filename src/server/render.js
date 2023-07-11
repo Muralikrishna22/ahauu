@@ -1,14 +1,15 @@
 import React from "react";
 // import {renderToString} from 'react-dom/server';
-import { renderToPipeableStream } from "react-dom/server";
+import { renderToPipeableStream } from 'react-dom/server';
 import { DataProvider } from "./data";
 import { StaticRouter } from "react-router-dom/server";
 import CustomRoutes from '../client/routes';
 import HtmlTemplate from "./htmlTemplate";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import serialize from "serialize";
 
 
-const API_DELAY = 2000; // How long the data fetches on the server.
+const API_DELAY = 5000; // How long the data fetches on the server.
 const ABORT_DELAY = 10000; // How long the server waits for data before giving up.
 const JS_BUNDLE_DELAY = 4000; // How long serving the JS bundles is delayed.
 const queryClient = new QueryClient();
@@ -16,11 +17,13 @@ const queryClient = new QueryClient();
 
 // In a real setup, you'd read it from webpack build stats.
 let assets = {
-    "main.js": "/main.js",
+    "main.js": "client/main.js",
     "main.css": "/main.css"
 };
 
-module.exports = function render(req, res) {
+export const data = createServerData();
+
+export default function render(req, res) {
 
     // The new wiring is a bit more involved.
     res.socket.on("error", (error) => {
@@ -28,7 +31,7 @@ module.exports = function render(req, res) {
     });
 
     let didError = false;
-    const data = createServerData();
+
     const jsx = (
         <QueryClientProvider client={queryClient}>
             <StaticRouter location={req.url}>
@@ -38,7 +41,7 @@ module.exports = function render(req, res) {
     )
     const stream = renderToPipeableStream(
         <DataProvider data={data}>
-            <HtmlTemplate jsx={jsx} />
+            <HtmlTemplate jsx={jsx} assets={assets} />
         </DataProvider>,
         {
             bootstrapScripts: [assets["main.js"]],
@@ -56,7 +59,7 @@ module.exports = function render(req, res) {
     );
     // Abandon and switch to client rendering if enough time passes.
     // Try lowering this to see the client recover.
-    setTimeout(() => stream.abort(), ABORT_DELAY);
+    setTimeout(() => { stream.abort(), console.log("____________ABORTED_BECAUSE_OF_DELAY_______________") }, ABORT_DELAY);
 };
 
 // Simulate a delay caused by data fetching.
