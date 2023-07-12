@@ -30,6 +30,9 @@ const Products = () => {
                         <p>${obj.price}</p>
                         <button>Add to Cart</button>
                     </div>
+                    <div>
+                        <img src={obj.image} alt="image" />
+                    </div>
                 </div>
             ))}
         </div>
