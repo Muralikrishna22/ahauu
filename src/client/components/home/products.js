@@ -22,6 +22,7 @@ const Products = () => {
 
     return (
         <div>
+            <h3>Products</h3>
             {data?.map((obj) => (
                 <div className="product" key={obj.id}>
                     <div className="details">

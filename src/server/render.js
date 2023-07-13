@@ -53,7 +53,7 @@ export default function render(req, res) {
             },
             onError(x) {
                 didError = true;
-                console.error(x);
+                console.error("having error", x);
             }
         }
     );
