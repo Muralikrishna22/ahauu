@@ -19,11 +19,13 @@ let assets = {
 
 
 const queryClient = new QueryClient();
-const jsx = <QueryClientProvider client={queryClient}>
+const jsx = (
+//  <QueryClientProvider client={queryClient}> 
     <BrowserRouter>
         <CustomRoutes assets={window.assetManifest} />
     </BrowserRouter>
-</QueryClientProvider>
+// </QueryClientProvider>
+)
 
 window.addEventListener('DOMContentLoaded', () => {
     ReactDOM.hydrateRoot(document,

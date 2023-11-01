@@ -33,18 +33,18 @@ export default function render(req, res) {
     let didError = false;
 
     const jsx = (
-        <QueryClientProvider client={queryClient}>
+        // <QueryClientProvider client={queryClient}>
             <StaticRouter location={req.url}>
                 <CustomRoutes location={req.url} />
             </StaticRouter>
-        </QueryClientProvider>
+        // </QueryClientProvider>
     )
     const stream = renderToPipeableStream(
         <DataProvider data={data}>
             <HtmlTemplate jsx={jsx} assets={assets} />
         </DataProvider>,
         {
-            bootstrapScripts: [assets["main.js"]],
+            bootstrapScripts: [assets["main.js"]],  
             onShellReady() {
                 // If something errored before we started streaming, we set the error code appropriately.
                 res.statusCode = didError ? 500 : 200;

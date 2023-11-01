@@ -7,12 +7,7 @@ const webpack = require('webpack')
 const isProduction = process?.env?.NODE_ENV === 'production';
 const config = (entry, outputPath, target) => {
     return {
-        entry: {
-            main: [
-                "@babel/polyfill",
-                path.resolve(__dirname, entry),
-            ],
-        },
+        entry: path.resolve(__dirname, entry),
         mode: isProduction ? 'production' : 'development',
         devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
         output: {
@@ -43,29 +38,23 @@ const config = (entry, outputPath, target) => {
                 },
                 {
                     test: /\.css$/,
-                    use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                        },
-                        'css-loader'
-                    ],
+                    use: [MiniCssExtractPlugin.loader,'css-loader'],
                 },
                 {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(png|jpg|jpeg|gif|svg)$/,
                     use: [
-                        {
-                            loader: 'url-loader',
-                            options: {
-                                limit: 8192, // Adjust the limit as needed
-                                name: '[name].[ext]',
-                                outputPath: 'images',
-                                publicPath: '/images/' // Update publicPath
-                            }
-                        }
-                    ]
-                }
+                        // {
+                        //   loader: "file-loader",
+                        //   options: {
+                        //     name: "assets/images/[name].[ext]",
+                        //   },
+                        // },
+                        "file-loader",
+                        'url-loader'
+                      ],
+                  },
             ],
-        }
+        },
     }
 }
 

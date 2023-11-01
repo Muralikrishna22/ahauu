@@ -26,13 +26,13 @@ const AppStatus = () => {
         <div className="app-status">
             <>
                 {/* {isServerRendered && (
-                    <div className="toast">
+                    <div className="custom-alert">
                         <RiErrorWarningFill className="toast-error-icon" />
                         <p>Failed to hydrate  </p>
                     </div>
                 )} */}
                 {isClientHydrated && (
-                    <div className="toast">
+                    <div className="custom-alert">
                         <RiCheckLine className="toast-icon" />
                         <p>Hydration complete</p>
                     </div>

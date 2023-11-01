@@ -3,7 +3,7 @@
   /* Add any desired styles for the container */
 }
 
-.toast {
+.custom-alert {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -26,7 +26,7 @@
   color: red;
 }
 
-.toast p {
+.custom-alert p {
   margin: 0;
   font-size: 14px;
   color: #333;
