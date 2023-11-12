@@ -3,6 +3,7 @@ import { BiSearchAlt } from 'react-icons/bi'
 import '../../assets/css/layout/Header.css'
 import { BsFillCartCheckFill } from 'react-icons/bs'
 import { PiHandCoinsFill } from 'react-icons/pi'
+import '../../assets/images/logo.png'
 
 const Header = () => {
 
@@ -39,7 +40,7 @@ const Header = () => {
 
             <div className="header-right-block">
                 <div className="profile">
-                    <img className="profile-picture" src="https://lh3.googleusercontent.com/ogw/AOLn63Hf13KWjo9IJr_xTBgKhzKby9xcaPFAbF-SAxU=s32-c-mo" alt="Profile Picture" />
+                    <img className="profile-picture" src={require('../../assets/images/logo.png')} alt="Profile Picture" />
                 </div>
                 <div className="round-icon">
                     <PiHandCoinsFill />

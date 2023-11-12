@@ -20,7 +20,7 @@ if (process.env.ASSET_MODE != 3) {
       "transform-assets",
       {
         extensions: ["svg", "png", "jpeg", "jpg", "webp"],
-        name: "images/[name].[ext]",
+        name: "client/assets/images/[name].[ext]",
       },
     ]
   );

@@ -29,28 +29,24 @@ const config = (entry, outputPath, target) => {
                 {
                     test: /\.js$/,
                     exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-react', '@babel/preset-env'],
-                        },
-                    },
-                },
+                    use: ["babel-loader"],
+                  },
                 {
                     test: /\.css$/,
                     use: [MiniCssExtractPlugin.loader,'css-loader'],
                 },
                 {
                     test: /\.(png|jpg|jpeg|gif|svg)$/,
+                    // type: "asset/resource",
                     use: [
-                        // {
-                        //   loader: "file-loader",
-                        //   options: {
-                        //     name: "assets/images/[name].[ext]",
-                        //   },
-                        // },
-                        "file-loader",
-                        'url-loader'
+                        {
+                          loader: "file-loader",
+                          options: {
+                            name: "assets/images/[name].[ext]",
+                          },
+                        },
+                        // "file-loader",
+                        // 'url-loader'
                       ],
                   },
             ],
