@@ -18,6 +18,14 @@ let assets = {
 };
 
 
+// document
+// 	.querySelectorAll(
+// 		'html > *:not(body, head), script[src*="extension://"], link[href*="extension://"], script[src*="scr.kaspersky-labs.com"], link[href*="scr.kaspersky-labs.com"]'
+// 	)
+// 	.forEach((s) => {
+// 		s.parentNode.removeChild(s);
+// 	});
+
 const queryClient = new QueryClient();
 const jsx = (
 //  <QueryClientProvider client={queryClient}> 

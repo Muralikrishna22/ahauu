@@ -27,7 +27,7 @@ export default function HtmlTemplate({ assets, jsx, title }) {
                         __html: `assetManifest = ${JSON.stringify(assets)};`
                     }}
                 />
-                <script src="/client/main.js"></script>
+                <script src="/server/main.js"></script>
             </body>
         </html>
     );
