@@ -1,0 +1,37 @@
+export const categories = [
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    }, {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    },
+    {
+        name:"Trekking",
+        image:'https://imagetolink.com/ib/9gZHjony7j.jpg'
+    }
+]

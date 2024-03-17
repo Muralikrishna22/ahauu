@@ -1,28 +1,23 @@
 import React from 'react'
-import { useData } from '../../../server/data';
-import axios from 'axios';
+import '../../assets/css/Home/Categories.css'
+import { categories } from './data'
+import { Col, Container, Row } from 'react-bootstrap';
+
 
 const Categories = () => {
-    const getProductCategoriesRepo = () => {
-        return axios({
-            method: 'GET',
-            url: 'https://fakestoreapi.com/products/categories'
-        });
-    };
-    const { data, isLoading, error, } = useData('categories', getProductCategoriesRepo)
-
-    if (error || !data) {
-        return <div>Error: Failed to fetch product categories data</div>;
-    }
     return (
-        <div>
-            <h3>Categories</h3>
-            {data.map((obj, ind) => (
-                <div key={ind}>
-                    <input type='checkbox' />
-                    <label>{obj}</label>
-                </div>
-            ))}
+        <div className='categories'>
+            <h3>Categories -- </h3>
+            <Row>
+                {categories.map((obj, ind) => (
+                    <Col xs={6} md={4} key={ind}>
+                        <div className='category_card'>
+                            <img src={obj.image} />
+                            <p>{obj.name}</p>
+                        </div>
+                    </Col>
+                ))}
+            </Row>
         </div>
     )
 }
