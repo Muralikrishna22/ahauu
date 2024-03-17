@@ -6,3 +6,13 @@
     --text-secondary:white;
     
 }
+
+.dark_theme{
+    --btn-primary-background:white;
+    --btn-secondary-background:black;
+    --btn-primary-color:black;
+    --text-primary:white;
+    --text-secondary:black;
+    background-color: black;
+    color: white;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../assets/css/Home/Products.css'
-import { categories } from './data'
+import { accessories } from './data'
 import { Col, Container, Row } from 'react-bootstrap';
 
 
@@ -11,7 +11,7 @@ const Products = () => {
                 <span>Let's explore what fits for youuuuuuuuuu... </span><h3>Products </h3>
             </div>
             <Row>
-                {categories.map((obj, ind) => (
+                {accessories.map((obj, ind) => (
                     <Col xs={4} md={2} key={ind}>
                         <div className='product_card'>
                             <img src={obj.image} />

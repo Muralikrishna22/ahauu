@@ -1,0 +1,61 @@
+.coupens_list {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 100%;
+    gap: 20px;
+    padding: 15px 0px;
+}
+
+.coupen_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    min-width: 310px;
+}
+
+.coupen_card div:first-child{
+    display: flex;
+    justify-content: space-between;
+}
+
+.coupen_card div:first-child p{
+    font-size: large;
+    font-weight: 700;
+}
+
+.coupen_card div:first-child button{
+    border-radius: 25px;
+    padding: 0 15px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    max-height: 31px;
+}
+
+.coupen_card.style_1 div:first-child button{
+    background-color: var(--btn-secondary-background);
+    color: var(--text-primary);
+}
+
+.coupen_card.style_2 div:first-child button{
+    background-color: var(--btn-primary-background);
+    color: var(--text-secondary);
+}
+.coupen_card.style_1{
+    background-color: var(--btn-primary-background);
+    color: var(--text-secondary);
+    box-shadow: 2px 4px 10px   var(--btn-primary-background);
+}
+
+.coupen_card.style_2{
+    background-color: var(--btn-secondary-background);
+    color: var(--text-primary);
+    box-shadow: 2px 4px 10px   var(--btn-primary-background);
+}
+
+

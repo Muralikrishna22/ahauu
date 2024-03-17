@@ -9,7 +9,7 @@
     border-radius: 30px;
     object-fit: cover;
     width: 100%;
-    box-shadow: 2px 4px 10px black;
+    box-shadow: 2px 4px 10px  var(--btn-primary-background);;
 }
 
 .banner_block .left_block{
@@ -26,4 +26,10 @@
 .left_block p{
     font-size: 2vmax;
     font-weight: 500;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {    .banner_block img{
+        height: 45vw;
+    }
 }

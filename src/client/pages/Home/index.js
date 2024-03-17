@@ -4,6 +4,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 import CategoriesMenu from '../../components/home/CategoriesMenu';
 import BannerBlock from '../../components/home/BannerBlock';
 import OffersBlock from '../../components/home/OffersBlock';
+import CoupenCards from '../../components/home/CoupenCards';
+import BikeAccessories from '../../components/home/BikeAccessories';
+import SeasonalTrips from '../../components/home/SeasonalTrips';
 const Categories = lazy(() => import('../../components/home/categories' /* webpackPrefetch: true */));
 const Products = lazy(() => import('../../components/home/products' /* webpackPrefetch: true */));
 
@@ -22,9 +25,12 @@ function Home() {
                     title="Embedded youtube"
                 /> */}
                 <BannerBlock />
-                <OffersBlock />
+                {/* <OffersBlock /> */}
                 <Categories />
                 <Products />
+                <CoupenCards/>
+                <BikeAccessories/>
+                <SeasonalTrips/>
             </Container>
         </Base>
     )
