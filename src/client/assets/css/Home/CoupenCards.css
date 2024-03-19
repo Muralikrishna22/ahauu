@@ -38,24 +38,24 @@
 }
 
 .coupen_card.style_1 div:first-child button{
-    background-color: var(--btn-secondary-background);
+    background-color: var(--primary-background);
     color: var(--text-primary);
 }
 
 .coupen_card.style_2 div:first-child button{
-    background-color: var(--btn-primary-background);
+    background-color: var(--primary-btn-background);
     color: var(--text-secondary);
 }
 .coupen_card.style_1{
-    background-color: var(--btn-primary-background);
+    background-color: var(--primary-btn-background);
     color: var(--text-secondary);
-    box-shadow: 2px 4px 10px   var(--btn-primary-background);
+    box-shadow: 2px 4px 10px   var(--primary-btn-background);
 }
 
 .coupen_card.style_2{
-    background-color: var(--btn-secondary-background);
+    background-color: var(--primary-background);
     color: var(--text-primary);
-    box-shadow: 2px 4px 10px   var(--btn-primary-background);
+    box-shadow: 2px 4px 10px   var(--primary-btn-background);
 }
 
 

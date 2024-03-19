@@ -23,7 +23,7 @@ main {
 .primary_btn{
   padding: 10px;
   margin: 0 10px;
-  background-color: var(--btn-primary-background);
+  background-color: var(--primary-background);
   border-radius: 5px;
   color: var(--btn-primary-color);
 }

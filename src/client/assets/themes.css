@@ -1,18 +1,25 @@
+/* primary, secondary, tertiary, quaternary */
 .light_theme{
-    --btn-primary-background:black;
-    --btn-secondary-background:white;
-    --btn-primary-color:white;
+    background-color: white;
+    color: black;
+    --primary-background:white;
+    --secondary-background:#dbdbdb;
+    --primary-btn-background:black;
+    --secondary-btn-background:white;
     --text-primary:black;
     --text-secondary:white;
-    
+    --border-primary:#dbdbdb;
+    --border-secondary:black;
+    --box-shadow-primary: 1px 1px 3px #dbdbdb;
+    --box-shadow-secondary: 1px 1px 3px black;
 }
 
 .dark_theme{
-    --btn-primary-background:white;
-    --btn-secondary-background:black;
-    --btn-primary-color:black;
-    --text-primary:white;
-    --text-secondary:black;
     background-color: black;
     color: white;
+    --primary-background:white;
+    --secondary-background:black;
+    --text-primary:white;
+    --text-secondary:black; 
 }
+
