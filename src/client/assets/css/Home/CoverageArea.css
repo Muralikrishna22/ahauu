@@ -1,0 +1,80 @@
+
+.coverage_area{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.coverage_area .tab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-secondary);
+    padding: 5px 15px;
+    justify-content: space-between;
+    flex: 0 1 100%;
+    background-color: var(--btn-secondary-background);
+    color: var(--text-primary);
+}
+
+.coverage_area .tab.active{
+    background-color: var(--primary-btn-background);
+    color: var(--text-secondary);
+}
+
+.coverage_area div:last-child{
+    display: flex;
+    gap: 20px;
+}
+
+.coverage_places_list{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+
+.place_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.place_card img{
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 4px 10px;
+    object-fit: contain;
+}
+
+.place_card p{
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    /* text-shadow: 0px 2px 2px grey; */
+}
+
+.coverage_area h2{
+    background: var(--primary-btn-background);
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .place_card p{
+        font-size: 15px;
+    }
+}
+
+

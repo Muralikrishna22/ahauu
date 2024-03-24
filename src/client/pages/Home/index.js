@@ -7,6 +7,11 @@ import OffersBlock from '../../components/home/OffersBlock';
 import CoupenCards from '../../components/home/CoupenCards';
 import BikeAccessories from '../../components/home/BikeAccessories';
 import SeasonalTrips from '../../components/home/SeasonalTrips';
+import FindUrCab from '../../components/home/FindUrCab';
+import CabCoupen from '../../components/home/CabCoupen';
+import CoverageArea from '../../components/home/CoverageArea';
+import BreakUp from '../../components/home/BreakUp';
+import TripPlan from '../../components/home/TripPlan';
 const Categories = lazy(() => import('../../components/home/categories' /* webpackPrefetch: true */));
 const Products = lazy(() => import('../../components/home/products' /* webpackPrefetch: true */));
 
@@ -31,6 +36,11 @@ function Home() {
                 <CoupenCards/>
                 <BikeAccessories/>
                 <SeasonalTrips/>
+                <FindUrCab />
+                <CabCoupen />
+                <CoverageArea />
+                <BreakUp />
+                <TripPlan />
             </Container>
         </Base>
     )

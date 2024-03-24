@@ -1,0 +1,37 @@
+.trip_plan{
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+.trip_plan_title{
+    padding-left: 10px;
+    font-size: 80px;
+    font-weight: bold;
+}
+.trip_plan_subtitle{
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.trip_desc{
+    font-size: 25px;
+    box-shadow: var(--box-shadow-secondary);
+    border-radius: 10px;
+    padding: 20px;
+    /* padding-left: 30px; */
+    /* padding-top: 30px; */
+}
+.submit_btn{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+}
+.submit_btn_block{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
