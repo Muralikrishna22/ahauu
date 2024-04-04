@@ -22,7 +22,7 @@ const TripPlan = () => {
             </div>
         </div>
         <div className="trip_desc">
-            <textarea style={{borderRadius: '10px', backgroundColor: '#F1F1F1', padding: '15px'}} placeholder="Please Share your Trip Plan with us..." id="trip_plan" name="trip_desc" rows="7" cols="60" />
+            <textarea style={{borderRadius: '10px', backgroundColor: '#F1F1F1', padding: '15px'}} placeholder="Please Share your Trip Plan with us..." id="trip_plan" name="trip_desc" rows="7" cols="45" />
         </div>
     </div>
   );  

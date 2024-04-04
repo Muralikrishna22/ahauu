@@ -12,6 +12,9 @@ import CabCoupen from '../../components/home/CabCoupen';
 import CoverageArea from '../../components/home/CoverageArea';
 import BreakUp from '../../components/home/BreakUp';
 import TripPlan from '../../components/home/TripPlan';
+import Blogs from '../../components/home/Blogs';
+import Guidance from '../../components/home/Guidance';
+import Story from '../../components/home/Story';
 const Categories = lazy(() => import('../../components/home/categories' /* webpackPrefetch: true */));
 const Products = lazy(() => import('../../components/home/products' /* webpackPrefetch: true */));
 
@@ -41,6 +44,16 @@ function Home() {
                 <CoverageArea />
                 <BreakUp />
                 <TripPlan />
+                <Blogs />
+                <Guidance />
+                <Story />
+                <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '20px', fontWeight: 'bold' }}>
+                    <span>
+                        "There is a kind of magicnessabout going far away and then coming back all changed." 
+                    </span>
+                    <br />
+                    <span>- H. P. Lovecraft</span>
+                </div>
             </Container>
         </Base>
     )
